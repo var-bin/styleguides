@@ -8,3 +8,19 @@
 * Disallow end-of-line whitespace. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/no-eol-whitespace/) ]</sup>
 * Disallow empty sources. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/no-empty-source/) ]</sup>
 * Use soft tabs (2 spaces) for indentation. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/indentation/) ]</sup> <sup>[ [stackoverflow](https://stackoverflow.blog/2017/06/15/developers-use-spaces-make-money-use-tabs/) ]</sup>
+
+## Additional Formatting
+* Prefer **dashes** over camelCasing, Underscores and PascalCasing in class names. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-class-pattern/) ]</sup>
+* Do not use **ID** selectors. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-id-pattern/) ]</sup> <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-no-id/) ]</sup>
+* When using multiple selectors in a rule declaration, give each selector its own line. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-list-comma-newline-after/) ]</sup> <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-max-empty-lines/) ]</sup>
+* Put a space before the opening brace `{` in rule declarations. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/block-opening-brace-space-before/) ]</sup>
+* Put a new line after the opening brace `{` in rule declarations. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/block-opening-brace-newline-after/) ]</sup>
+* In properties, put a space after, but not before, the `:` character. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/declaration-colon-space-after/) ]</sup> <sup>[ [stylelint](https://stylelint.io/user-guide/rules/declaration-colon-space-before/) ]</sup>
+* Give each declaration its own line. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-after/) ]</sup>
+* Put closing braces `}` of rule declarations on a new line. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/block-closing-brace-newline-after/) ]</sup> <sup>[ [stylelint](https://stylelint.io/user-guide/rules/block-closing-brace-newline-before/) ]</sup>
+* Put blank lines between rule declarations. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/rule-empty-line-before/) ]</sup>
+* Put a single space after the combinators of selectors. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-combinator-space-after/) ]</sup> <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-combinator-space-before/) ]</sup>
+* Limit the number of compound selectors in a selector: **4** <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-max-compound-selectors/) ]</sup>
+* Require a trailing semicolon within declaration blocks. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/declaration-block-trailing-semicolon/) ]</sup>
+* Prefer **lowercase** over *UPPERCASE* for properties, units. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/property-case/) ]</sup> <sup>[ [stylelint](https://stylelint.io/user-guide/rules/unit-case/) ]</sup>
+* Prefer double quotes over single quotes <sup>[ [stylelint](https://stylelint.io/user-guide/rules/string-quotes/) ]</sup>
