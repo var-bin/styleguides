@@ -24,3 +24,11 @@
 * Require a trailing semicolon within declaration blocks. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/declaration-block-trailing-semicolon/) ]</sup>
 * Prefer **lowercase** over *UPPERCASE* for properties, units. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/property-case/) ]</sup> <sup>[ [stylelint](https://stylelint.io/user-guide/rules/unit-case/) ]</sup>
 * Prefer double quotes over single quotes <sup>[ [stylelint](https://stylelint.io/user-guide/rules/string-quotes/) ]</sup>
+
+## Comments
+* Prefer line comments ([// in Sass-land](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#comments)) to block comments. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/comment-whitespace-inside/) ]</sup> <sup>[ [stylelint](https://stylelint.io/user-guide/rules/no-invalid-double-slash-comments/) ]</sup> CSS caveats: <sup>[ [stackoverflow](https://stackoverflow.com/questions/12298890/is-it-bad-practice-to-comment-out-single-lines-of-css-with/20192639#20192639) ]</sup> <sup>[ [xanthir](http://www.xanthir.com/b4U10) ]</sup>
+* Prefer comments on their own line. Avoid end-of-line comments. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/comment-empty-line-before/) ]</sup>
+* Write detailed comments for code that isn't self-documenting:
+  * Uses of `z-index`
+  * Compatibility or browser-specific hacks  <sup>[ [github](https://github.com/Slamdunk/stylelint-no-browser-hacks) ]</sup>
+* Disallow empty comments. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/comment-no-empty/) ]</sup>
