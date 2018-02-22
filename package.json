@@ -1,0 +1,38 @@
+{
+  "name": "var-bin-styleguides",
+  "version": "1.0.0",
+  "description": "This repository contains style guides for CSS, Sass, JavaScript, TypeScript, etc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://var-bin@github.com/var-bin/styleguides.git"
+  },
+  "keywords": [
+    "Style",
+    "Guides",
+    "CSS",
+    "Style",
+    "Guide",
+    "TypeScript",
+    "Style",
+    "Guide",
+    "JavaScript",
+    "Style",
+    "Guide",
+    "HTML",
+    "Style",
+    "Guide",
+    "Sass",
+    "Style",
+    "Guide"
+  ],
+  "author": "Vitalii Rybka @var_bincom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/var-bin/styleguides/issues"
+  },
+  "homepage": "https://github.com/var-bin/styleguides#readme"
+}
