@@ -11,6 +11,8 @@ const md = require("markdown-it")({
   html: true,
   linkify: true
 });
+// https://github.com/chalk/chalk
+const chalk = require("chalk");
 
 const README = "README.md";
 const ROOT = path.resolve(__dirname, "../");
@@ -27,19 +29,22 @@ function brokenLinks(html, baseUrl) {
   const htmlChecker = new blc.HtmlChecker({}, {
     link: (result) => {
       const resultLink = result.url.original;
-      const resultBroken = result.broken ? "🔗 Broken" : "🔗 OK";
+      const resultBroken = result.broken ? chalk.red("🔗 Broken") : chalk.green("🔗 OK");
 
-      const msg = `${resultLink}: ${resultBroken}`;
-      console.info(msg);
+      if (resultBroken) {
+        const msg = `${resultBroken} ${resultLink}`;
+
+        console.info(msg);
+      }
     },
     complete: () => {
-      const endMsg = "\n=== Finish broken link checker ===";
+      const endMsg = chalk.bgYellow("\n=== Finish broken link checker ===");
 
       console.info(endMsg);
     }
   });
 
-  const initMsg = "=== Init broken link checker ===\n";
+  const initMsg = chalk.bgYellow("=== Init broken link checker ===\n");
   console.info(initMsg);
 
   htmlChecker.scan(html, baseUrl);
@@ -93,7 +98,7 @@ function getFiles(dir, callback) {
         }
 
         if (stats.isFile() && path.basename(newItem) === README) {
-          console.log(`${path.resolve(dir, newItem)}: isFile`);
+          console.log(chalk.underline(`${path.resolve(dir, newItem)}: isFile`));
 
           if (typeof callback === "function") {
             fs.readFile(path.resolve(dir, newItem), "utf8", callback);
@@ -102,7 +107,7 @@ function getFiles(dir, callback) {
 
         // if `newItem` is directory, read it
         if (stats.isDirectory()) {
-          console.log(`${path.resolve(dir, newItem)}: isDirectory`);
+          console.log(chalk.italic(`${path.resolve(dir, newItem)}: isDirectory`));
 
           // magic happens here
           getFiles(path.relative(dir, newItem), (err, data) => {
