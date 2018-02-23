@@ -29,7 +29,7 @@ function brokenLinks(html, baseUrl) {
   const htmlChecker = new blc.HtmlChecker({}, {
     link: (result) => {
       const resultLink = result.url.original;
-      const resultBroken = result.broken ? chalk.red("🔗 Broken") : chalk.green("🔗 OK");
+      const resultBroken = result.broken ? chalk.red("  🔗 Broken") : chalk.green("  🔗 OK");
 
       if (resultBroken) {
         const msg = `${resultBroken} ${resultLink}`;
