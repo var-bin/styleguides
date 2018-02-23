@@ -11,7 +11,7 @@
 
 ## Additional Formatting
 * Prefer **dashes** over camelCasing, Underscores and PascalCasing in class names. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-class-pattern/) ]</sup>
-* Do not use **ID** selectors. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-id-pattern/) ]</sup> <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-no-id/) ]</sup>
+* Do not use **ID** selectors. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-id-pattern/) ]</sup> <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-max-id/) ]</sup>
 * When using multiple selectors in a rule declaration, give each selector its own line. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-list-comma-newline-after/) ]</sup> <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-max-empty-lines/) ]</sup>
 * Put a space before the opening brace `{` in rule declarations. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/block-opening-brace-space-before/) ]</sup>
 * Put a new line after the opening brace `{` in rule declarations. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/block-opening-brace-newline-after/) ]</sup>
