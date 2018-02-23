@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/var-bin/styleguides#readme",
   "devDependencies": {
-    "broken-link-checker": "^0.7.7"
+    "broken-link-checker": "^0.7.7",
+    "markdown-it": "^8.4.1"
   }
 }
