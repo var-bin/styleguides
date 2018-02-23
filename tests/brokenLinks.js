@@ -36,6 +36,13 @@ function brokenLinks(html, baseUrl) {
 
         console.info(msg);
       }
+
+      if (result.broken) {
+        htmlChecker.pause();
+        const errMsg = `Link ${result.url.original} is broken ${result.brokenReason}. Please check it and fix it!`;
+
+        throw new Error(errMsg);
+      }
     },
     complete: () => {
       const endMsg = chalk.bgYellow("\n=== Finish broken link checker ===");
