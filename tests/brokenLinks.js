@@ -5,7 +5,6 @@
 const blc = require("broken-link-checker");
 const fs = require("fs");
 const path = require("path");
-const util = require("util");
 
 const README = "README.md";
 const ROOT = path.resolve(__dirname, "../");
@@ -43,30 +42,29 @@ function getPaths(dir) {
     "tests": "tests"
   };
 
-  fs.readdir(dir, (err, files) => {
+  fs.readdir(dir, (err, items) => {
     if (err) {
       throw new Error(error);
     }
 
-    const newFiles = files.filter((file) => {
-      return file !== TRIGGERS_FILES_DIRECTORIES[file];
+    const newItems = items.filter((item) => {
+      return item !== TRIGGERS_FILES_DIRECTORIES[item];
     });
 
-    newFiles.forEach((file) => {
-
-      fs.stat(path.resolve(ROOT, file), (err, stats) => {
+    newItems.forEach((newItem) => {
+      fs.stat(newItem, (err, stats) => {
         if (err) {
-          throw new Error(error);
+          throw new Error(err);
         }
 
         if (stats.isDirectory()) {
-          getPaths(path.resolve(ROOT, file));
+          console.log(`${path.resolve(dir, newItem)}: isDirectory`);
 
-          console.log(`${path.resolve(ROOT, file)}: `, stats.isDirectory());
-        } else {
-          console.log(`${path.resolve(ROOT, file)}: `, stats.isDirectory());
+          getPaths(path.relative(dir, newItem));
+        }
 
-          return;
+        if (stats.isFile() && path.basename(newItem) === README) {
+          console.log("file: ", path.resolve(dir, newItem));
         }
       });
     })
