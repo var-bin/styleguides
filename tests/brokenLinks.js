@@ -5,6 +5,10 @@
 const blc = require("broken-link-checker");
 const fs = require("fs");
 const path = require("path");
+const md = require("markdown-it")({
+  html: true,
+  linkify: true
+});
 
 const README = "README.md";
 const ROOT = path.resolve(__dirname, "../");
@@ -33,7 +37,18 @@ function brokenLinks(html, baseUrl) {
   htmlChecker.scan(html, baseUrl);
 }
 
-function getPaths(dir) {
+function checkLinks(err, data) {
+  if (err) {
+    throw err;
+  }
+
+  brokenLinks(md.render(data));
+}
+
+function getFiles(dir, callback) {
+  dir = dir || "";
+  callback = callback || undefined;
+
   const TRIGGERS_FILES_DIRECTORIES = {
     ".git": ".git",
     ".gitignore": ".gitignore",
@@ -44,7 +59,7 @@ function getPaths(dir) {
 
   fs.readdir(dir, (err, items) => {
     if (err) {
-      throw new Error(error);
+      throw err;
     }
 
     const newItems = items.filter((item) => {
@@ -54,22 +69,30 @@ function getPaths(dir) {
     newItems.forEach((newItem) => {
       fs.stat(newItem, (err, stats) => {
         if (err) {
-          throw new Error(err);
+          throw err;
+        }
+
+        if (stats.isFile() && path.basename(newItem) === README) {
+          console.log(`${path.resolve(dir, newItem)}: isFile`);
+
+          if (typeof callback === "function") {
+            fs.readFile(path.resolve(dir, newItem), "utf8", callback);
+          }
         }
 
         if (stats.isDirectory()) {
           console.log(`${path.resolve(dir, newItem)}: isDirectory`);
 
-          getPaths(path.relative(dir, newItem));
-        }
-
-        if (stats.isFile() && path.basename(newItem) === README) {
-          console.log("file: ", path.resolve(dir, newItem));
+          // magic happens here
+          getFiles(path.relative(dir, newItem), (err, data) => {
+            checkLinks(err, data);
+          });
         }
       });
-    })
+    });
   });
 }
 
-//brokenLinks("<a href='https://github.com/stevenvachon/broken-link-checker' target='_blank'>test link</a> <a href='https://prettier.io/docs/en/index.html' target='_blank'>test link</a>");
-getPaths(ROOT);
+getFiles(ROOT, (err, data) => {
+  checkLinks(err, data);
+});
