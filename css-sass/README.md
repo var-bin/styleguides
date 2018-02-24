@@ -1,6 +1,7 @@
 # CSS / Sass Styleguide
 
 ## General Formatting
+
 * Source files are encoded in UTF-8 (no BOM). <sup>[ [.editorconfig](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties#charset) ]</sup> <sup>[ [stackoverflow](https://stackoverflow.com/questions/2223882/whats-different-between-utf-8-and-utf-8-without-bom/2223926#2223926) ]</sup>
 * Keep each line of code to a readable length. Unless you have a reason to, keep lines to fewer than **120** characters. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/max-line-length/) ]</sup>
 * Ensures the file ends with a newline. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/no-missing-end-of-source-newline/) ]</sup>
@@ -10,6 +11,7 @@
 * Use soft tabs (2 spaces) for indentation. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/indentation/) ]</sup> <sup>[ [stackoverflow](https://stackoverflow.blog/2017/06/15/developers-use-spaces-make-money-use-tabs/) ]</sup>
 
 ## Additional Formatting
+
 * Prefer **dashes** over camelCasing, Underscores and PascalCasing in class names. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-class-pattern/) ]</sup>
 * Do not use **ID** selectors. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-id-pattern/) ]</sup> <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-max-id/) ]</sup>
 * When using multiple selectors in a rule declaration, give each selector its own line. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-list-comma-newline-after/) ]</sup> <sup>[ [stylelint](https://stylelint.io/user-guide/rules/selector-max-empty-lines/) ]</sup>
@@ -26,6 +28,7 @@
 * Prefer double quotes over single quotes <sup>[ [stylelint](https://stylelint.io/user-guide/rules/string-quotes/) ]</sup>
 
 ## Comments
+
 * Prefer line comments ([// in Sass-land](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#comments)) to block comments. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/comment-whitespace-inside/) ]</sup> <sup>[ [stylelint](https://stylelint.io/user-guide/rules/no-invalid-double-slash-comments/) ]</sup> CSS caveats: <sup>[ [stackoverflow](https://stackoverflow.com/questions/12298890/is-it-bad-practice-to-comment-out-single-lines-of-css-with/20192639#20192639) ]</sup> <sup>[ [xanthir](http://www.xanthir.com/b4U10) ]</sup>
 * Prefer comments on their own line. Avoid end-of-line comments. <sup>[ [stylelint](https://stylelint.io/user-guide/rules/comment-empty-line-before/) ]</sup>
 * Write detailed comments for code that isn't self-documenting:
