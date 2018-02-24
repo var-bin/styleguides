@@ -1,0 +1,43 @@
+{
+  "name": "var-bin-styleguides",
+  "version": "1.0.0",
+  "description": "This repository contains style guides for CSS, Sass, JavaScript, TypeScript, etc",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run blc",
+    "blc": "node ./tests/brokenLinks",
+    "lint": "eslint **/*.js && markdownlint **/*.md --config .markdownlint.json --ignore node_modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://var-bin@github.com/var-bin/styleguides.git"
+  },
+  "keywords": [
+    "Style Guides",
+    "CSS Style Guide",
+    "TypeScript Style Guide",
+    "JavaScript Style Guide",
+    "HTML Style Guide",
+    "Sass Style Guide",
+    "CSS",
+    "HTML",
+    "Sass",
+    "TypeScript",
+    "JavaScript"
+  ],
+  "author": "Vitalii Rybka @var_bincom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/var-bin/styleguides/issues"
+  },
+  "homepage": "https://github.com/var-bin/styleguides#readme",
+  "devDependencies": {
+    "broken-link-checker": "^0.7.7",
+    "chalk": "^2.3.1",
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "markdown-it": "^8.4.1",
+    "markdownlint-cli": "^0.7.1"
+  }
+}
