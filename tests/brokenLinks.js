@@ -45,14 +45,11 @@ function brokenLinks() {
         }
       },
       complete: () => {
-        const endMsg = chalk.bgYellow("\n=== Finish broken link checker ===");
+        const endMsg = "\n=== Finish broken link checker ===";
 
         console.info(endMsg);
       }
     });
-
-    const initMsg = chalk.bgYellow("=== Init broken link checker ===\n");
-    console.info(initMsg);
 
     htmlChecker.scan(html, _baseUrl);
   }
@@ -106,7 +103,7 @@ function brokenLinks() {
           }
 
           if (stats.isFile() && path.basename(newItem) === README) {
-            console.info(chalk.underline(`${path.resolve(_dir, newItem)}: isFile`));
+            console.info(`${path.resolve(_dir, newItem)}: isFile`);
 
             if (typeof _callback === "function") {
               fs.readFile(path.resolve(_dir, newItem), "utf8", _callback);
@@ -115,11 +112,11 @@ function brokenLinks() {
 
           // if `newItem` is directory, read it
           if (stats.isDirectory()) {
-            console.info(chalk.italic(`${path.resolve(_dir, newItem)}: isDirectory`));
+            console.info(`${path.resolve(_dir, newItem)}: isDirectory`);
 
             // magic happens here
-            getFiles(path.relative(_dir, newItem), (readFileErr, readFileErrData) => {
-              checkLinks(readFileErr, readFileErrData);
+            getFiles(path.relative(_dir, newItem), (readFileErr, readFileData) => {
+              checkLinks(readFileErr, readFileData);
             });
           }
         });
@@ -128,8 +125,8 @@ function brokenLinks() {
   }
 
   function _init() {
-    getFiles(ROOT, (readFileErr, readFileErrData) => {
-      checkLinks(readFileErr, readFileErrData);
+    getFiles(ROOT, (readFileErr, readFileData) => {
+      checkLinks(readFileErr, readFileData);
     });
   }
 
