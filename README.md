@@ -6,3 +6,6 @@
 [![@var_bincom on Twitter](https://img.shields.io/twitter/follow/var_bincom.svg?style=social&logo=twitter&label=Follow%20%40var_bincom)](https://twitter.com/var_bincom) [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?text=Style+Guides+https%3A%2F%2Fgithub.com%2Fvar-bin%2Fstyleguides%3A+HTML%2C+CSS%2FSass%2C+JavaScript%2C+TypeScript+by+%40var_bincom&hashtags=StyleGuide%2CCodeStyle%2CStyleGuidesMatters)
 
 This repository contains style guides for CSS, Sass, JavaScript, TypeScript, etc
+
+-----
+1. [CSS/Sass Style Guide](https://github.com/var-bin/styleguides/tree/master/css-sass)
