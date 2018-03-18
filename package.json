@@ -1,7 +1,7 @@
 {
   "name": "var-bin-styleguides",
   "version": "1.0.0",
-  "description": "This repository contains style guides for CSS, Sass, JavaScript, TypeScript, etc",
+  "description": "This repository contains style guides for HTML, CSS, Sass, JavaScript, TypeScript.",
   "main": "index.js",
   "scripts": {
     "test": "npm run blc",
